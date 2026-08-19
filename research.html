@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Marco F. da Silva</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,400;0,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+  <nav>
+    <div class="wordmark">Marco F. da Silva</div>
+    <div class="navlinks">
+      <a href="index.html">about</a>
+      <a href="research.html" aria-current="page">research</a>
+      <a href="projects.html">projects</a>
+      <a href="teaching.html">teaching</a>
+    </div>
+  </nav>
+
+  <section class="page" id="research">
+    <div class="head">
+      <div class="eyebrow">Research</div>
+      <h1 class="measure">Interpretability of decision-making in language models</h1>
+    </div>
+    <div class="block">
+      <p class="lede measure">A model told to be generous will say generous things. Whether the same intervention changes the amount it hands over is a separate question, and the one I care about.</p>
+      <div class="items">
+        <div class="item">
+          <h3>Steering vectors from decisions, not adjectives</h3>
+          <p class="body measure">Persona vectors are extracted by contrasting personality descriptions and scoring how a model <em>sounds</em>, which makes the direction partly a rhetoric direction. I am building vectors from objective game-theoretic choices instead — cooperate or defect, what is actually transferred — and testing whether they steer behaviour where the trait vectors steer wording.</p>
+        </div>
+        <div class="item">
+          <h3>How much of a steering effect is the prompt?</h3>
+          <p class="body measure">Reformatting a question can move a model's choice as much as steering it does. On a reproduced baseline, measuring steering strength in units of prompt formatting — and reading choices off the logits, so the measurement needs no sampling and no judge.</p>
+        </div>
+      </div>
+      <p class="body measure todo">[Anything in submission or in progress you want listed here.]</p>
+    </div>
+    <div class="rule"></div>
+    <div class="eyebrow">Publications</div>
+    <div class="pub">
+      <div class="row">
+        <div class="col">
+          <div class="plate"><img src="assets/pitch-control.jpg" alt="Pitch control across one frame of a match: the pitch shaded blue or red by which team would most likely reach the ball, with player markers and velocity arrows."></div>
+          <div class="venue">Figure 1 — pitch control in a single frame. Shading gives the team more likely to reach the ball; arrows are player velocities.</div>
+        </div>
+        <div class="col">
+      <h2>Interplay between pitch control and top speed in soccer: the stamina factor</h2>
+      <p class="authors"><em>Marco F. da Silva</em>, Álvaro Novillo, Alberto Aleta, Roberto López del Campo, Ricardo Resta, Yamir Moreno, Javier M. Buldú</p>
+      <p class="venue">Scientific Reports 15(1) · 2025</p>
+      <p class="body measure">A pitch-control model that gives every player their own top speed rather than assuming one for all, plus a stamina factor that scales it. The effect on pitch control turns out to be logarithmic, and accumulated control tracks top speed only within the limits of a player's role — defenders accumulate the most without being the fastest.</p>
+      <div class="links">
+        <a href="https://doi.org/10.1038/s41598-025-22778-6">Scientific Reports</a>
+        <a href="https://github.com/Markfds01/Tracking_laliga">code</a>
+      </div>
+</div>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <div class="block">
+      <div class="eyebrow">In preparation</div>
+      <p class="body measure todo">[Anything in submission or in progress you want listed — title and a line is enough.]</p>
+    </div>
+  </section>
+</div>
+</body>
+</html>
