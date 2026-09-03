@@ -25,7 +25,7 @@
       <h1 class="measure">Teaching Assistant, Computational Physics</h1>
     </div>
     <div class="block">
-      <p class="body measure">I have the pleasure of assisting with the practical sessions of Computational Physics, a second-year Physics BSc course run by <a href="https://aaleta.github.io/teaching/">Alberto Aleta</a> — the part where students write the methods themselves, in C: Euler and Verlet, Monte Carlo, molecular dynamics, the Ising model, simulated annealing, networks.</p>
+      <p class="lede measure">I have the pleasure of assisting with the practical sessions of Computational Physics, a second-year Physics BSc course run by <a href="https://aaleta.github.io/teaching/">Alberto Aleta</a> — the part where students write the methods themselves, in C: Euler and Verlet, Monte Carlo, molecular dynamics, the Ising model, simulated annealing, networks.</p>
       <p class="body measure">A couple of the projects we have built for it, each a real program the students write over the term and then get ambushed with an extension in the exam:</p>
     </div>
     <div class="rule"></div>
@@ -33,32 +33,28 @@
       <div class="item">
         <div class="eyebrow">Project · 2025 / 2026</div>
         <h2>Stochastic Parrots</h2>
-        <p class="body measure">Implement <a href="https://github.com/karpathy/llama2.c">Llama 2</a> inference in C from scratch, then run a real language model on a laptop. The point of the project is that none of it is beyond a first-year course: the entire forward pass is matrix multiplication, a normalisation, and drawing a sample from a distribution. Students write every one of those themselves, importing nothing — and find that the systems everyone talks about as though they were opaque are built from the maths they already have.</p>
-        <p class="body measure">The students found that the parrots have opinions about whether they will pass the exam, so in the exam we asked them to put the question to the model. Apparently none had tried beforehand, and the parrots were not optimistic.</p>
+        <p class="body measure">Implement <a href="https://github.com/karpathy/llama2.c">Llama 2</a> inference in C from scratch and then run a small LLM on a regular laptop. Nothing in it is beyond a first-year course: the forward pass is matrix multiplication, a normalisation, and drawing from a distribution.</p>
+        <p class="body measure">In the exam we had them ask the model whether they would pass. Apparently nobody had thought to try it first, and the parrots were not optimistic.</p>
         <div class="media">
           <div class="termbar">
-            <div class="venue">Both prompted with the line the students were given in the exam. Generated here on CPU with the course's inference engine.</div>
             <button type="button" id="replay">replay</button>
           </div>
           <div class="termgrid">
             <div class="termcol">
-              <div class="venue">TinyStories 110M</div>
               <div class="term" id="term-ts" aria-live="polite"><noscript>Replay requires JavaScript. It runs ./parrot models/stories110M_q80.bin -t 0.8 -i "I think I am a good student, but"; achieved tok/s: 451.2.</noscript></div>
             </div>
             <div class="termcol">
-              <div class="venue">TinyLlama 1.1B chat · greedy, t=0</div>
               <div class="term" id="term-tl" aria-live="polite"><noscript>Replay requires JavaScript. It runs ./parrot models/tinyLlama.bin -t 0 -n 60 -i "I think that I will pass the exam, but"; achieved tok/s: 50.5.</noscript></div>
             </div>
           </div>
-          <div class="venue">Left: sampled at temperature 0.8 — a model trained only on children's stories decides it is a bad student, then invents a reassuring Mum to talk it back down. Right: decoded greedily at temperature 0 — it hesitates once, then locks into an eleven-token loop from the tenth generated token and never escapes. Same C code, same weights; the difference is the sampler.</div>
         </div>
         <div class="links repo"><a href="https://github.com/aaleta/2026_1_stochastic_parrots">&rarr;&nbsp;github.com/aaleta/2026_1_stochastic_parrots</a></div>
       </div>
       <div class="item">
         <div class="eyebrow">Project · 2025 / 2026</div>
         <h2>Doomscrolling</h2>
-        <p class="body measure">A student wanders the first floor of the Faculty of Science the week before exams, trying to ambush professors with last-minute questions — but with their eyes on TikTok, so they move by a correlated random walk. Stress accumulates, finding a professor resets it, and running out of time triggers a panicked flight from the building. Stochastic movement, von Mises headings, collision detection and real-time physics in SDL3.</p>
-        <p class="body measure">For the exam, on the anniversary of the 2025 Iberian Peninsula blackout, we switched the lights off: the student could see only what fell inside the cone lit by their phone, and had to find the professors in the dark while the battery drained.</p>
+        <p class="body measure">A student hunts professors on the first floor the week before exams, eyes on TikTok, moving by a correlated random walk. Stress accumulates, finding a professor resets it, running out of time triggers a panicked flight.</p>
+        <p class="body measure">For the exam, on the anniversary of the 2025 Iberian blackout, we switched the lights off: only the cone lit by the phone is visible, and the battery drains.</p>
         <div class="media">
           <div class="vidgrid">
             <video controls muted playsinline preload="metadata" aria-label="The assignment: a student moving by a correlated random walk through the faculty."><source src="assets/doomscrolling-assignment.webm" type="video/webm"><p>Your browser can't play this WebM video. <a href="assets/doomscrolling-assignment.webm">Download the video</a>.</p></video>
