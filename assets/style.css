@@ -99,6 +99,8 @@ p { margin: 0; text-wrap: pretty; }
 .authors em { font-style: normal; color: var(--ink); border-bottom: 1px solid var(--rule); }
 .venue { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; color: var(--faint); }
 .links { display: flex; gap: 18px; flex-wrap: wrap; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; }
+.links.repo a { border-bottom: none; }
+.links.repo a:hover { text-decoration: underline; }
 
 
 .termgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
@@ -109,6 +111,8 @@ p { margin: 0; text-wrap: pretty; }
         font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13.5px; line-height: 1.7;
         color: #cfd6cd; min-height: 15.5em; white-space: pre-wrap; overflow-wrap: anywhere; }
 .term .pt { color: #6e7d6c; }
+.term .cmd { color: #7f9c7c; display: block; margin-bottom: 0.5em; }
+.term .rate { color: #5f6b5e; display: block; margin-top: 0.5em; }
 .term .cursor { display: inline-block; width: 0.55em; height: 1.05em; vertical-align: -0.18em;
                 background: var(--accent); animation: blink 1.05s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
