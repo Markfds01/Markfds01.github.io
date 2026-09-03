@@ -52,9 +52,6 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .plate { border: 1px solid var(--rule); border-radius: 3px; background: var(--panel); padding: 10px; }
 .plate img, .plate svg { width: 100%; height: auto; display: block; border-radius: 2px; }
 .plate img { background: #fff; }
-.awaiting { aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; text-align: center;
-            font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11.5px; color: var(--faint);
-            border: 1px dashed var(--rule); border-radius: 2px; padding: 14px; line-height: 1.5; }
 
 nav {
   display: flex; justify-content: space-between; align-items: baseline;
@@ -124,10 +121,6 @@ p { margin: 0; text-wrap: pretty; }
 @media (max-width: 700px) { .vidgrid { grid-template-columns: minmax(0, 1fr); } }
 .vidgrid video { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 3px; background: #000; }
 @media (prefers-reduced-motion: reduce) { .term .cursor { animation: none; } }
-.todo { color: var(--faint); font-style: italic; }
-.fig { margin: 6px 0 0; display: flex; flex-direction: column; gap: 10px; }
-.fig img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 3px; background: #fff; }
-figcaption { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12.5px; line-height: 1.55; color: var(--faint); }
 .contact { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
 .contact a.ic { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
                 color: var(--faint); border: 1px solid var(--rule); border-radius: 50%; transition: color .15s, border-color .15s; }
