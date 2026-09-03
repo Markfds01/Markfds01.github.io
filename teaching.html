@@ -42,17 +42,17 @@
           </div>
           <div class="termgrid">
             <div class="termcol">
-              <div class="venue">TinyStories 110M · 451 tok/s · <span class="tp">“I think I am a good student, but”</span></div>
-              <div class="term" id="term-ts" aria-live="polite"><noscript>Replay requires JavaScript. See the caption above for what it shows.</noscript></div>
+              <div class="venue">TinyStories 110M</div>
+              <div class="term" id="term-ts" aria-live="polite"><noscript>Replay requires JavaScript. It runs ./parrot models/stories110M_q80.bin -t 0.8 -i "I think I am a good student, but"; achieved tok/s: 451.2.</noscript></div>
             </div>
             <div class="termcol">
-              <div class="venue">TinyLlama 1.1B chat · 50.5 tok/s · greedy, t=0 · <span class="tp">“I think that I will pass the exam, but”</span></div>
-              <div class="term" id="term-tl" aria-live="polite"><noscript>Replay requires JavaScript. See the caption above for what it shows.</noscript></div>
+              <div class="venue">TinyLlama 1.1B chat · greedy, t=0</div>
+              <div class="term" id="term-tl" aria-live="polite"><noscript>Replay requires JavaScript. It runs ./parrot models/tinyLlama.bin -t 0 -n 60 -i "I think that I will pass the exam, but"; achieved tok/s: 50.5.</noscript></div>
             </div>
           </div>
-          <div class="venue">Left: sampled at temperature 0.8 — a model trained only on children's stories decides it is a bad student, and then the exam itself speaks up to reassure it. Right: decoded greedily at temperature 0 — it hesitates once, then locks into an eleven-token loop from the tenth generated token and never escapes. Same C code, same weights; the difference is the sampler.</div>
+          <div class="venue">Left: sampled at temperature 0.8 — a model trained only on children's stories decides it is a bad student, then invents a reassuring Mum to talk it back down. Right: decoded greedily at temperature 0 — it hesitates once, then locks into an eleven-token loop from the tenth generated token and never escapes. Same C code, same weights; the difference is the sampler.</div>
         </div>
-        <div class="links"><a href="https://github.com/aaleta/2026_1_stochastic_parrots">github</a></div>
+        <div class="links repo"><a href="https://github.com/aaleta/2026_1_stochastic_parrots">&rarr;&nbsp;github.com/aaleta/2026_1_stochastic_parrots</a></div>
       </div>
       <div class="item">
         <div class="eyebrow">Project · 2025 / 2026</div>
@@ -66,7 +66,7 @@
           </div>
           <div class="venue">The assignment (left) and the exam blackout extension (right). Stress and battery tick down; finding a professor buys back some calm. Recordings by <a href="https://aaleta.github.io/teaching/">Alberto Aleta</a>.</div>
         </div>
-        <div class="links"><a href="https://github.com/aaleta/2026_2_doomscrolling">github</a></div>
+        <div class="links repo"><a href="https://github.com/aaleta/2026_2_doomscrolling">&rarr;&nbsp;github.com/aaleta/2026_2_doomscrolling</a></div>
       </div>
       <div class="item">
         <div class="eyebrow">Instructor · 2024</div>
@@ -81,8 +81,12 @@
 <script>
   // Token streams for the two terminal replays. Kept inline (not fetched from JSON) so this
   // page works over file:// with no server, and because the data is only used here.
+  const CMD = {
+    "term-ts": ['./parrot models/stories110M_q80.bin -t 0.8 -i "I think I am a good student, but"', 'achieved tok/s: 451.2'],
+    "term-tl": ['./parrot models/tinyLlama.bin -t 0 -n 60 -i "I think that I will pass the exam, but"', 'achieved tok/s: 50.5']
+  };
   const RUNS = [
-    { el: "term-ts", tokens: ["I", " think", " I", " am", " a", " good", " student", ",", " but", " I", " am", " actually", " a", " bad", " student", ".", " Today", ",", " I", " have", " to", " take", " an", " exam", ".\"", "\n", "M", "um", " smiled", ".", " \"", "Don", "'", "t", " worry", " sweet", "ie", ",", " you", " will", " do", " great", " on", " the", " exam", ".", " Just", " focus", " and", " try", " your", " best", ".\"", "\n", "I", " tried", " hard", ",", " but", " it", " was", " difficult", ".", " I", " looked", " at", " the", " questions", " and", " thought", " they", " were", " too", " long", ".", "\n", "S", "ud", "den", "ly", ",", " I", " heard", " a", " voice", ".", " It", " was", " the", " exam", " itself", ".", " It", " said", ":", " \"", "You", " are", " a", " bad", " student", ",", " but", " I", " know", " you", " can", " do", " it", ".", " You", " are", " a", " good", " student", " and", " you", " will", " pass", " the", " exam", "!\"", "\n", "I", " felt", " happy", ".", " I", " knew", " that", " I", " could", " do", " it", ",", " and", " I", " did", ".", " I", " was", " sure", " I", " could", " pass", " the", " exam", "."], prompt_n: 9 },
+    { el: "term-ts", tokens: ["I", " think", " I", " am", " a", " good", " student", ",", " but", " I", " am", " actually", " a", " bad", " student", ".", " Today", ",", " I", " have", " to", " take", " an", " exam", ".\"", "\n", "M", "um", " smiled", ".", " \"", "Don", "'", "t", " worry", " sweet", "ie", ",", " you", " will", " do", " great", " on", " the", " exam", ".", " Just", " focus", " and", " try", " your", " best", ".\""], prompt_n: 9 },
     { el: "term-tl", tokens: ["I", " think", " that", " I", " will", " pass", " the", " exam", ",", " but", " I", " am", " not", " sure", " if", " I", " will", " pass", " it", ".", " I", " am", " not", " sure", " if", " I", " will", " pass", " the", " exam", ".", " I", " am", " not", " sure", " if", " I", " will", " pass", " the", " exam", ".", " I", " am", " not", " sure", " if", " I", " will", " pass", " the", " exam", ".", " I", " am", " not", " sure", " if", " I", " will"], prompt_n: 10 }
   ];
   let timers = [];
@@ -93,13 +97,15 @@
       const term = document.getElementById(run.el);
       if (!term) return;
       term.textContent = "";
-      if (reduce) { term.textContent = run.tokens.join(""); return; }
+      const cmd = document.createElement("span"); cmd.className = "cmd"; cmd.textContent = CMD[run.el][0]; term.appendChild(cmd);
+      const rate = document.createElement("span"); rate.className = "rate"; rate.textContent = CMD[run.el][1];
+      if (reduce) { term.appendChild(document.createTextNode(run.tokens.join(""))); term.appendChild(rate); return; }
       const pre = document.createElement("span"); pre.className = "pt"; term.appendChild(pre);
       const body = document.createElement("span"); term.appendChild(body);
       const caret = document.createElement("span"); caret.className = "cursor"; term.appendChild(caret);
       let i = 0;
       (function step() {
-        if (i >= run.tokens.length) { caret.remove(); return; }
+        if (i >= run.tokens.length) { caret.remove(); term.appendChild(rate); return; }
         (i < run.prompt_n ? pre : body).textContent += run.tokens[i];
         i += 1;
         timers.push(setTimeout(step, 46));
