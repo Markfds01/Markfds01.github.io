@@ -48,7 +48,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .measure { max-width: 860px; }
 .row { display: grid; grid-template-columns: minmax(0, 42%) minmax(0, 1fr); gap: 34px; align-items: start; }
 .row > .col { display: flex; flex-direction: column; gap: 10px; }
-@media (max-width: 780px) { .row { grid-template-columns: minmax(0, 1fr); gap: 20px; } }
+.row.aside { grid-template-columns: minmax(0, 20%) minmax(0, 1fr); gap: 26px; }
+@media (max-width: 780px) { .row, .row.aside { grid-template-columns: minmax(0, 1fr); gap: 20px; } }
 .plate { border: 1px solid var(--rule); border-radius: 3px; background: var(--panel); padding: 10px; }
 .plate img, .plate svg { width: 100%; height: auto; display: block; border-radius: 2px; }
 .plate img { background: #fff; }
