@@ -96,6 +96,7 @@ p { margin: 0; text-wrap: pretty; }
 .rule { height: 1px; background: var(--rule); }
 
 .pub { display: flex; flex-direction: column; gap: 10px; padding-left: 18px; border-left: 2px solid var(--accent); }
+.item.rail { padding-left: 18px; border-left: 2px solid var(--accent); }
 .authors { color: var(--soft); font-size: 16.5px; }
 .authors em { font-style: normal; color: var(--ink); border-bottom: 1px solid var(--rule); }
 .venue { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; color: var(--faint); }
