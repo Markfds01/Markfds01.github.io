@@ -89,6 +89,9 @@ p { margin: 0; text-wrap: pretty; }
 .meta { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; color: var(--faint); line-height: 1.6; }
 
 .block { display: flex; flex-direction: column; gap: 26px; }
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 44px; align-items: start; }
+.portrait { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 4px; }
+@media (max-width: 780px) { .intro { grid-template-columns: minmax(0, 1fr); gap: 26px; } .portrait { max-width: 240px; } }
 .head { display: flex; flex-direction: column; gap: 12px; }
 .items { display: flex; flex-direction: column; gap: 34px; }
 .item { display: flex; flex-direction: column; gap: 9px; }
