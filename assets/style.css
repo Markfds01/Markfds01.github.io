@@ -100,6 +100,17 @@ p { margin: 0; text-wrap: pretty; }
 
 .pub { display: flex; flex-direction: column; gap: 10px; padding-left: 18px; border-left: 2px solid var(--accent); }
 .item.rail { padding-left: 18px; border-left: 2px solid var(--accent); }
+#projects .item.rail { position: relative; isolation: isolate; transition: transform .25s ease; }
+#projects .item.rail::before { content: ""; position: absolute; inset: -12px -14px -12px 0; z-index: -1; border-radius: 0 6px 6px 0;
+                              background: color-mix(in oklab, var(--ink) 3.5%, transparent); opacity: 0; transition: opacity .25s ease; }
+#projects .item.rail:hover { transform: translateY(-2px); }
+#projects .item.rail:hover::before { opacity: 1; }
+#projects .item.rail .plate { overflow: hidden; }
+#projects .item.rail .plate img { transition: transform .4s ease; }
+#projects .item.rail:hover .plate img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) {
+  #projects .item.rail, #projects .item.rail:hover, #projects .item.rail:hover .plate img { transform: none; }
+}
 .item.edu { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px; align-items: start; }
 .item.edu > .col { display: flex; flex-direction: column; gap: 9px; }
 .badge { width: 56px; height: 56px; padding: 5px; display: flex; align-items: center; justify-content: center;
